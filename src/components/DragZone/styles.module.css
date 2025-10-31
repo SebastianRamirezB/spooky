@@ -1,0 +1,67 @@
+.inputDrag {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+
+.dragZone {
+  width: 600px;
+  height: 400px;
+  border: 2px dashed rgba(249, 115, 22, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  transition: 100ms ease-in;
+  background: linear-gradient(to bottom right,
+      rgba(67, 20, 7, 0.3),
+      /* from-orange-950 con 30% opacidad */
+      rgba(124, 45, 18, 0.2)
+      /* to-orange-900 con 20% opacidad */
+    );
+
+  &:hover {
+    border-color: rgba(249, 115, 22, 0.6);
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.8),
+      0 0 20px rgba(249, 115, 22, 0.6),
+      0 0 40px rgba(249, 115, 22, 0.4),
+      0 0 80px rgba(249, 115, 22, 0.2);
+
+    .uploadIcon {
+      scale: 1.1;
+
+    }
+  }
+
+  &.uploadIcon & p {
+    margin: 0;
+  }
+}
+
+
+.uploadIcon {
+  background-color: #f97316;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+  transition: 100ms ease-in;
+  pointer-events: none;
+
+
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .dragZone {
+    width: 90%;
+  }
+
+}

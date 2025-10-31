@@ -1,0 +1,228 @@
+/* preflight.css
+   Normaliza estilos básicos similar a Tailwind's Preflight / Normalize.
+   Comentarios en español para facilitar ajustes.
+*/
+
+/* Box sizing: hace que el padding/border no aumenten el ancho/alto */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset de margenes y ajuste de texto base */
+html {
+  line-height: 1.5;
+  /* base line-height */
+  -webkit-text-size-adjust: 100%;
+  /* evita que Safari escale el texto automáticamente */
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+    sans-serif;
+  color-scheme: light dark;
+  /* permite que browser ajuste según tema */
+}
+
+
+
+/* Tipografía de elementos inline y tipográficos */
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 600;
+  margin: 0;
+  /* dejar control a utilidades/estilos concretos */
+}
+
+/* Enlaces */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-decoration-skip-ink: auto;
+}
+
+/* Listas
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+} */
+
+/* Imágenes y medios */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  /* evita gaps con inline images */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablas */
+table {
+  border-collapse: collapse;
+  border-color: inherit;
+}
+
+/* Formularios: heredar tipografía y normalizar apariencia */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* hereda de body para consistencia */
+  font-size: 100%;
+  line-height: inherit;
+  margin: 0;
+  /* elimina margen por defecto en algunos navegadores */
+}
+
+/* Botones: quitar estilos por defecto para control total */
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Inputs y selects: eliminar outline por defecto, pero mantener enfoque accesible */
+input,
+textarea,
+select {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+}
+
+/* Placeholder */
+::placeholder {
+  color: #9CA3AF;
+  /* gray-400 */
+  opacity: 1;
+  /* consistente entre navegadores */
+}
+
+/* Deshabilitados */
+:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Pre / code */
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",
+    "Segoe UI Mono", "Noto Sans Mono", monospace;
+  font-size: 0.875rem;
+  overflow: auto;
+  margin: 0;
+}
+
+code {
+  font-family: inherit;
+  font-size: 0.875em;
+}
+
+/* Accesibilidad: foco visible consistente */
+:focus {
+  outline: 2px solid Highlight;
+  /* usa color del sistema por defecto */
+  outline-offset: 2px;
+  /* si prefieres un color custom: outline: 2px solid rgba(59,130,246,0.6); */
+}
+
+/* Utilidad .sr-only para accesibilidad (ocultar visualmente pero accesible) */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Suavizar animaciones si el usuario lo solicita */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ajustes para elementos de tipo progress, details, summary (mejora cross-browser) */
+progress {
+  vertical-align: baseline;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+/* Pequeños fixes para inputs tipo search en WebKit */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* Opcional: variables CSS básicas (personaliza según tu tema) */
+:root {
+  --color-text: white;
+  --color-bg: linear-gradient(to bottom right, #09090b 0%, #18181b 50%, #09090b 100%);
+  --color-muted: #6B7280;
+  /* gray-500 */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+}
+
+/* Body: quitar margen por defecto y mejorar rendimiento de fuentes */
+body {
+  margin: 0;
+  line-height: inherit;
+  /* hereda de html */
+  min-height: 100vh;
+  background: var(--color-bg);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.wrapper {
+  max-width: 1440px;     /* límite máximo de ancho */
+  margin-left: auto;     /* centra horizontalmente */
+  margin-right: auto;
+  width: 100%;           /* ocupa todo el ancho disponible hasta el máximo */
+  box-sizing: border-box;
+}

@@ -1,0 +1,23 @@
+.badge {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2); 
+    transition: box-shadow 0.3s ease;
+    will-change: box-shadow;
+    margin-top: 60px;
+
+
+    &:hover {
+        box-shadow: 0 0 10px rgba(249, 115, 22, 0.8),
+            0 0 20px rgba(249, 115, 22, 0.6),
+            0 0 40px rgba(249, 115, 22, 0.4),
+            0 0 80px rgba(249, 115, 22, 0.2);
+    }
+}
+
+.badgeText {
+    color: rgb(251, 146, 60);
+    font-weight: 500;
+}

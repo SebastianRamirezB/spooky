@@ -1,0 +1,26 @@
+.container {
+    display: grid;
+    place-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100px;
+}
+
+.text {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    .container {
+        height: auto;
+        padding: 20px 0;
+        margin-top: 40px;
+    }
+
+
+    .text {
+
+        text-align: center;
+    }
+}
