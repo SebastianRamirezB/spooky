@@ -48,7 +48,7 @@ const ModalPhotoTransformed = ({ isOpen, setIsModalOpen, file, setFile, original
 
 
 
-        const response = await createImage({ file: compressedFile, prompt: 'convierte esta imagen en una con estilo halloween' });
+        const response = await createImage({ file: compressedFile, prompt: 'convierte esta imagen en una con estilo halloween tim burton' });
 
 
         // console.log(response?.message);
