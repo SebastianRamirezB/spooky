@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 import { CircleX, Download, RefreshCcw } from 'lucide-react';
 import SkeletonCreateImage from '../SkeletonCreateImage';
 import { toast } from 'sonner';
+import imageCompression from 'browser-image-compression';
 
 interface Props {
     originalImage: string;
@@ -35,7 +36,19 @@ const ModalPhotoTransformed = ({ isOpen, setIsModalOpen, file, setFile, original
 
         setIsLoading(true);
 
-        const response = await createImage({ file: file, prompt: 'convierte esta imagen en una con estilo halloween' });
+        //  Opciones de compresión
+        const options = {
+            maxSizeMB: 4.4, // máximo 1 MB
+            maxWidthOrHeight: 1080, // escala si es muy grande
+            useWebWorker: true, // mejora rendimiento
+        };
+
+        //  Comprimir imagen
+        const compressedFile = await imageCompression(file, options);
+
+       
+
+        const response = await createImage({ file: compressedFile, prompt: 'convierte esta imagen en una con estilo halloween' });
 
 
         // console.log(response?.message);
