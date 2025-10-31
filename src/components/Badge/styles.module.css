@@ -3,7 +3,7 @@
     padding: 10px 20px;
     border-radius: 50px;
     background-color: rgba(249, 115, 22, 0.1);
-    border: 1px solid rgba(249, 115, 22, 0.2); 
+    border: 1px solid rgba(249, 115, 22, 0.2);
     transition: box-shadow 0.3s ease;
     will-change: box-shadow;
     margin-top: 60px;
@@ -23,11 +23,12 @@
 }
 
 
-@media screen and (max-width: 1024px) { 
-.badge{
-    width: 90%;
-}
+@media screen and (max-width: 1024px) {
+    .badge {
+        width: 90%;
+    }
+
     .badgeText {
-    font-size: .8rem;
-}
+        font-size: .8rem;
+    }
 }
