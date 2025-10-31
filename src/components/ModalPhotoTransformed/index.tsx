@@ -46,7 +46,7 @@ const ModalPhotoTransformed = ({ isOpen, setIsModalOpen, file, setFile, original
         //  Comprimir imagen
         const compressedFile = await imageCompression(file, options);
 
-       
+
 
         const response = await createImage({ file: compressedFile, prompt: 'convierte esta imagen en una con estilo halloween' });
 
@@ -73,9 +73,12 @@ const ModalPhotoTransformed = ({ isOpen, setIsModalOpen, file, setFile, original
 
 
     const handleDownload = () => {
+        const uniqueId = crypto.randomUUID(); // genera un UUID como "d9aef9b6-2c56-4e3c-bf11-bd7a0a05a10c"
+        const fileName = `${uniqueId}.png`;
+
         const link = document.createElement('a');
         link.href = `data:image/png;base64,${image}`;
-        link.download = 'gemini-generated.png';
+        link.download = fileName;
         link.click();
     };
 
