@@ -14,7 +14,7 @@ const DragZone = () => {
     const [originalImage, setOriginalImage] = useState<string>('');
     const [file, setFile] = useState<File>();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [error, setError] = useState<string>('');
+    const [,setError] = useState<string>('');
 
 
 
@@ -115,6 +115,7 @@ const DragZone = () => {
                 setOriginalImage={setOriginalImage}
                 originalImage={originalImage}
             />}
+
         </>
 
     )
