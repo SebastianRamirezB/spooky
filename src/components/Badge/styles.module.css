@@ -21,3 +21,13 @@
     color: rgb(251, 146, 60);
     font-weight: 500;
 }
+
+
+@media screen and (max-width: 1024px) { 
+.badge{
+    width: 90%;
+}
+    .badgeText {
+    font-size: .8rem;
+}
+}

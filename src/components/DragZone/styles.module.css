@@ -16,6 +16,7 @@
   position: relative;
   display: grid;
   place-items: center;
+  text-align: center;
   place-content: center;
   transition: 100ms ease-in;
   background: linear-gradient(to bottom right,

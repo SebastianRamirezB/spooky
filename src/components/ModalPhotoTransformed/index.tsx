@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createImage } from '../../api/createImage';
 import styles from './styles.module.css';
 import { CircleX, Download, RefreshCcw } from 'lucide-react';
@@ -67,15 +67,26 @@ const ModalPhotoTransformed = ({ isOpen, setIsModalOpen, file, setFile, original
     };
 
 
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+
+
+        // Limpia al desmontar (cuando el modal se cierra)
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [])
+
 
     return (
         <>
             {
                 isOpen && (
                     <div className={styles.modal}>
-                        <button disabled={isLoading} onClick={closeModal} className={styles.closedButton}><CircleX /></button>
                         <div className={styles.modalContainer}>
+
                             <div className={styles.imageContainer}>
+                                <button disabled={isLoading} onClick={closeModal} className={styles.closedButton}><CircleX /></button>
 
                                 {
 
