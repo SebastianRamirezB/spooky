@@ -40,7 +40,7 @@ const ModalPhotoTransformed = ({ isOpen, setIsModalOpen, file, setFile, original
 
         // console.log(response?.message);
 
-        if (!response?.data || !response?.data) {
+        if (!response?.data || !response?.meta) {
             setIsLoading(false);
             toast.error(response?.message);
             return;

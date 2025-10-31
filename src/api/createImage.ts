@@ -40,7 +40,7 @@ export const createImage = async ({
         return {
             data: data.data,
             meta: data.meta,
-            message: '',
+            message: 'Creado exitosamente',
         };
     } catch (error: any) {
         if (error.response?.status === 429) {
@@ -52,6 +52,12 @@ export const createImage = async ({
                 message,
             };
         }
-        throw error;
+
+        return {
+                data: null,
+                meta: null,
+                message: 'No se pudo conectar con el servidor. Intenta de nuevo más tarde.',
+            };
+        
     }
 };
