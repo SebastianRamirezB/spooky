@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
-import { createImage } from '../../api/createImage';
-import styles from './styles.module.css';
-import { CircleX, Download, RefreshCcw } from 'lucide-react';
-import SkeletonCreateImage from '../SkeletonCreateImage';
-import { toast } from 'sonner';
 import imageCompression from 'browser-image-compression';
+import { toast } from 'sonner';
+import { CircleX, Download, RefreshCcw } from 'lucide-react';
+
+
+import { createImage } from '../../actions/createImage';
+import SkeletonCreateImage from '../SkeletonCreateImage';
+
+import styles from './styles.module.css';
 
 interface Props {
     originalImage: string;
@@ -19,7 +22,7 @@ interface Props {
 const ModalPhotoTransformed = ({ isOpen, setIsModalOpen, file, setFile, originalImage, setOriginalImage }: Props) => {
 
 
-    const [image, setImage] = useState('')
+    const [image, setImage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
 
@@ -48,10 +51,10 @@ const ModalPhotoTransformed = ({ isOpen, setIsModalOpen, file, setFile, original
 
 
 
-        const response = await createImage({ file: compressedFile, prompt: 'convierte esta imagen en una con estilo halloween tim burton' });
+        const response = await createImage({ file: compressedFile, prompt: 'puedes cambiar mi corte y estilo de cabello que me pueda quedar bien segun mi tipo de rostro' });
 
 
-        // console.log(response?.message);
+        // console.log(response);
 
         if (!response?.data || !response?.meta) {
             setIsLoading(false);

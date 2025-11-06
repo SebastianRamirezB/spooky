@@ -1,9 +1,10 @@
+import { aiApi } from '../api/ai-api';
 import type {
     CreateImageResponse,
     Data,
     Meta,
 } from '../interfaces/create-image.response';
-import { aiApi } from './ai-api';
+
 
 interface Options {
     prompt: string;
