@@ -196,14 +196,14 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* Opcional: variables CSS básicas (personaliza según tu tema) */
-:root {
+/* :root {
   --color-text: white;
   --color-bg: linear-gradient(to bottom right, #09090b 0%, #18181b 50%, #09090b 100%);
   --color-muted: #6B7280;
-  /* gray-500 */
+
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
-}
+} */
 
 /* Body: quitar margen por defecto y mejorar rendimiento de fuentes */
 body {
@@ -211,8 +211,8 @@ body {
   line-height: inherit;
   /* hereda de html */
   min-height: 100vh;
-  background: var(--color-bg);
-
+  background: linear-gradient(to bottom right, #09090b 0%, #18181b 50%, #09090b 100%);
+  color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
