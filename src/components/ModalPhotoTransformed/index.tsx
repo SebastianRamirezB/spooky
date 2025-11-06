@@ -51,10 +51,9 @@ const ModalPhotoTransformed = ({ isOpen, setIsModalOpen, file, setFile, original
 
 
 
-        const response = await createImage({ file: compressedFile, prompt: 'puedes cambiar mi corte y estilo de cabello que me pueda quedar bien segun mi tipo de rostro' });
+        const response = await createImage({ file: compressedFile, prompt: 'Una escena fotorealista y detallada de Halloween, con elementos clásicos como calabazas iluminadas con expresiones siniestras, telarañas cubriendo un viejo pórtico, figuras sombrías o fantasmas etéreos. La iluminación debe ser tenue y atmosférica, tal vez con el brillo de una luna llena o luces parpadeantes, creando una sensación de misterio y escalofrío. Asegúrate de que los materiales, texturas y la perspectiva sean extremadamente realistas.' });
 
 
-        // console.log(response);
 
         if (!response?.data || !response?.meta) {
             setIsLoading(false);
